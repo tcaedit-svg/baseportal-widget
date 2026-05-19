@@ -13,15 +13,11 @@
   <script src="https://cdn.jsdelivr.net/gh/tcaedit-svg/baseportal-widget@main/baseportal-widget.js"></script>
   <script>
     window.addEventListener('load', function () {
-      if (typeof BaseportalChatSDK !== 'undefined') {
-        new BaseportalChatSDK.BaseportalChat({
-          channelToken: '8c30cd91cfce78df12db7398d0f03b61a81ea632535bbab4923cf4ff98af4eb8',
-          position: 'bottom-right',
-          locale: 'pt'
-        });
-      } else {
-        document.body.innerHTML = '<p style="color:red;font-family:sans-serif;padding:20px">Erro: BaseportalChatSDK não carregou.</p>';
-      }
+      new BaseportalChatSDK.BaseportalChat({
+        channelToken: '8c30cd91cfce78df12db7398d0f03b61a81ea632535bbab4923cf4ff98af4eb8',
+        position: 'bottom-right',
+        locale: 'pt'
+      });
     });
   </script>
 </body>
