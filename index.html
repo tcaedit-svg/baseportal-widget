@@ -6,17 +6,32 @@
   <title>Chat</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { width: 100%; height: 100%; background: transparent; overflow: hidden; }
+    html, body { 
+      width: 100%; 
+      height: 100%; 
+      background: transparent; 
+      overflow: hidden; 
+    }
+    /* Força o widget a ocupar todo o espaço disponível */
+    #bp-container {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+    }
   </style>
 </head>
 <body>
+  <div id="bp-container"></div>
   <script src="https://cdn.jsdelivr.net/gh/tcaedit-svg/baseportal-widget@main/baseportal-widget.js"></script>
   <script>
     window.addEventListener('load', function () {
-      new BaseportalChatSDK.BaseportalChat({
+      var chat = new BaseportalChatSDK.BaseportalChat({
         channelToken: '8c30cd91cfce78df12db7398d0f03b61a81ea632535bbab4923cf4ff98af4eb8',
         position: 'bottom-right',
-        locale: 'pt'
+        locale: 'pt',
+        container: document.getElementById('bp-container')
       });
     });
   </script>
